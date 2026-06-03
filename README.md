@@ -1,40 +1,84 @@
-# Snake :video_game: :snake:
+# Noodle
 
-Implementation of the game Snake built using `Rust`'s `macroquad` crate.
+A simple implementation of the classic Snake game built in Rust using the `macroquad` game framework.
 
-<img width="350" alt="Screenshot 2024-09-21 at 6 37 28 PM" src="https://github.com/user-attachments/assets/2433b10a-d892-432b-a7ca-4fb01e4452ef">
+This project was created as a hands-on introduction to Rust. Rather than learning the language exclusively through tutorials, I wanted to build a complete application that would expose me to Rust's ownership model, structs, enums, pattern matching, state management, and event-driven programming. Snake provided a straightforward but engaging project that touches many fundamental programming concepts while remaining small enough to complete as a beginner.
 
-## Installation
+<img width="350" alt="Gameplay Screenshot" src="https://github.com/user-attachments/assets/2433b10a-d892-432b-a7ca-4fb01e4452ef">
 
-You need `Rust` intalled in your system with the `Cargo` package manager.
-* Clone the repository: `git clone <repository-url>`.
-* Change directory to the project root: `cd rusty-snake`.
-* In your terminal under the project root run: `cargo run`.
-* Enjoy!
+## Why This Project?
 
-## Rules and Features
+Learning a new programming language is often easier when building something tangible. I chose Snake because it combines several common game development concepts:
 
-Movement:
-* The snake moves continuously in one direction, and the player can change the direction using arrow keys (up, down, left, right) or WASD.
-* The snake moves one step at a time in the direction specified by the player.
-* The snake cannot move backwards directly (e.g., if it's moving right, it can't suddenly move left).
+- Real-time user input
+- Game loops
+- State management
+- Collision detection
+- Dynamic data structures
+- Rendering graphics to the screen
 
-Eating Food:
-* Food randomly appears on the game screen represented as a golden dot.
-* When the snake moves over the food, it "eats" it, causing the snake to grow longer.
-* The more food the snake eats, the longer it becomes.
-* After consuming food, new food appears at a different location on the screen.
+The `macroquad` crate provided a lightweight way to build a graphical application without the complexity of a full game engine, allowing me to focus primarily on learning Rust and its ecosystem.
 
-Avoiding Collisions:
-* The game ends if the snake runs into its own b (this version has no walls).
-* If you reach the edge of the screen the snake reappears on the opposite edge.
+## Features
 
-Speed Increase:
-* Each time you eact food the game speed increases (but its capped at a maximum speed).
+### Movement
+- Control the snake using either **WASD** or the **Arrow Keys**.
+- The snake moves continuously in the selected direction.
+- Reverse movement is prevented to avoid immediate self-collisions.
+
+### Food System
+- Food spawns at random locations across the board.
+- Consuming food increases the snake's length.
+- A new piece of food is generated after each successful collection.
+
+### Collision Detection
+- The game ends when the snake collides with itself.
+- This implementation does not include walls.
+- Moving beyond the edge of the screen causes the snake to wrap around and reappear on the opposite side.
+
+### Progressive Difficulty
+- The snake's movement speed increases after eating food.
+- Speed growth is capped to keep the game playable.
 
 ## Controls
 
-* `Q` for quitting the game.
-* `Esc` for quitting the GUI (closing the application).
-* `WASD` or arrow keys for moving the snake.
-* `Enter` to start the game.
+| Key | Action |
+|------|---------|
+| `W`, `A`, `S`, `D` | Move Snake |
+| Arrow Keys | Move Snake |
+| `Enter` | Start Game |
+| `Q` | Quit Game |
+| `Esc` | Close Application |
+
+## Installation
+
+### Prerequisites
+
+- Rust
+- Cargo (included with Rust)
+
+Install Rust from:
+
+https://www.rust-lang.org/tools/install
+
+### Running the Game
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+Navigate to the project directory:
+
+```bash
+cd rusty-snake
+```
+
+Build and run:
+
+```bash
+cargo run
+```
+
+Enjoy!
