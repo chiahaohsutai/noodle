@@ -1,4 +1,4 @@
-# Noodle
+# Noodles
 
 A simple implementation of the classic Snake game built in Rust using the `macroquad` game framework.
 
